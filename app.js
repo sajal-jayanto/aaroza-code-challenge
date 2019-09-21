@@ -23,9 +23,9 @@ const usersRouter = require('./routes/users');
 app.use('/api', indexRouter);
 app.use('/api/user', usersRouter);
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-app.listen(port , () => {
+app.listen(PORT , () => {
     console.log('The server is running at port 3000..');
 });
 
