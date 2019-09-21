@@ -40,8 +40,8 @@ exports.add_a_user = (req , res) => {
                         user.save()
                             .then(result => {
                                 const token = jwt.sign({_id : result._id} , process.env.TOKEN_SECRET , { expiresIn: '1h' });
-                                return res.header('auth_token' , token).status(201).json({
-                                    auth_token : token,
+                                return res.header('auth-token' , token).status(201).json({
+                                    token : token,
                                     message : "User created"
                                 });
                             })
@@ -82,8 +82,8 @@ exports.login_a_user =  (req , res) =>{
                 else{
                     if(result){
                         const token = jwt.sign({_id : user._id} , process.env.TOKEN_SECRET ,  { expiresIn: '1h' });
-                        return res.status(400).header('auth_token' , token).json({
-                            auth_token : token
+                        return res.status(400).header('auth-token' , token).json({
+                            token : token
                         });
                     }
                     else{
