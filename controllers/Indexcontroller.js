@@ -13,7 +13,7 @@ exports.get_all_movies = async (req , res) =>{
                     title : ret.title,
                     year : ret.year,
                     rating : ret.rating,
-                    act : ret.actors.map(re  => {
+                    actor : ret.actors.map(re  => {
                         return {
                             name : re.name,
                             birthday : re.birthday,
